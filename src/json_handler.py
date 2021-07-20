@@ -22,4 +22,4 @@ class JSONHandler:
 
 if __name__ == '__main__':
     from parser import Parser
-    print(Parser('../midi/river_flows.mid').get_chain())
+    print(Parser('../midi/markov-testfile_01.mid').get_chain())

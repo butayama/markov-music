@@ -7,6 +7,7 @@ from markov_chain import MarkovChain
 import random
 import mido
 
+
 class Generator:
 
     def __init__(self, markov_chain):
@@ -36,12 +37,15 @@ class Generator:
             midi.tracks.append(track)
             midi.save(filename)
 
+
 if __name__ == "__main__":
     import sys
+
     if len(sys.argv) == 3:
         # Example usage:
         # python generator.py <in.mid> <out.mid>
         from parser import Parser
+
         chain = Parser(sys.argv[1]).get_chain()
         Generator.load(chain).generate(sys.argv[2])
         print('Generated markov chain')
