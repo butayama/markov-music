@@ -8,6 +8,7 @@ import argparse
 
 from markov_chain import MarkovChain
 
+
 class Parser:
 
     def __init__(self, filename, verbose=False):
@@ -80,9 +81,12 @@ class Parser:
     def get_chain(self):
         return self.markov_chain
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="The midi file input")
     args = parser.parse_args()
-    print(Parser(args.input_file, verbose=False).get_chain())
+    m = Parser(args.input_file, verbose=False).get_chain()
+    print(m)
     print('No issues parsing {}'.format(args.input_file))
+    m.print_as_matrix()

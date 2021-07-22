@@ -6,6 +6,7 @@ from markov_chain import MarkovChain
 
 import random
 import mido
+from m_parser import Parser
 
 
 class Generator:
@@ -41,10 +42,12 @@ class Generator:
 if __name__ == "__main__":
     import sys
 
+    # input_file = "Piano_1.Stimme.mid"
+    # output_file = "generated_from_1.Stimme.mid"
     if len(sys.argv) == 3:
         # Example usage:
         # python generator.py <in.mid> <out.mid>
-        from parser import Parser
+
 
         chain = Parser(sys.argv[1]).get_chain()
         Generator.load(chain).generate(sys.argv[2])
@@ -52,3 +55,6 @@ if __name__ == "__main__":
     else:
         print('Invalid number of arguments:')
         print('Example usage: python generator.py <in.mid> <out.mid>')
+
+    # chain = input_file.get_chain()
+    # chain.print_as_matrix()

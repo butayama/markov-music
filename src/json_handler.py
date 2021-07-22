@@ -21,5 +21,5 @@ class JSONHandler:
             return json.load(f)
 
 if __name__ == '__main__':
-    from parser import Parser
+    from m_parser import Parser
     print(Parser('../midi/markov-testfile_01.mid').get_chain())
